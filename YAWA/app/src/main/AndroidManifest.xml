@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="isel.pdm.yawa">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".presentation.StartupActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.WeatherCurrentActivity"
+            android:noHistory="true">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".presentation.WeatherForecastActivity"
+            android:noHistory="true"></activity>
+        <activity android:name=".presentation.CreditsActivity"></activity>
+        <activity android:name=".presentation.ErrorActivity"></activity>
+    </application>
+
+</manifest>

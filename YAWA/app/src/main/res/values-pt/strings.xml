@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="credits_authors_label">Autores</string>
+
+    <string name="toolbar_city_search">Pesquisar</string>
+    <string name="toolbar_city_text">Cidade</string>
+
+    <string name="current_btn_text">Tempo Diário</string>
+    <string name="forecast_btn_text">Tempo para 5 dias</string>
+</resources>

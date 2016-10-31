@@ -1,0 +1,4 @@
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="@string/toolbar_city_text"
+    android:hint="@string/toolbar_city_input_hint"
+    />

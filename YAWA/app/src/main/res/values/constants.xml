@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_link">https://openweathermap.org/</string>
+
+    <string name="api_key_name">appid</string>
+    <string name="api_key_value">99782393b194cd0ce6255bed5ca62c95</string>
+
+    <string name="api_url">http://api.openweathermap.org/data/2.5/</string>
+    <string name="api_current_weather">weather</string>
+    <string name="api_daily_forecast_weather">forecast/daily</string>
+
+    <string name="api_img_icon">http://openweathermap.org/img/w</string>
+
+    <string name="default_city">Lisbon</string>
+    <string name="default_country_tag">PT</string>
+
+    <string name="query_string">q=</string>
+    <string name="lang_string">lang=</string>
+</resources>

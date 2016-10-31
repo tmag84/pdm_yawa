@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@android:color/holo_blue_dark"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:minHeight="?attr/actionBarSize">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/toolbar_logo"
+        android:layout_alignBottom="@+id/toolbar"
+        android:layout_toRightOf="@+id/weather_current_selector"
+        android:layout_toEndOf="@+id/weather_current_selector"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/toolbar_app_logo" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/toolbar_input"
+        android:hint="@string/toolbar_city_input_hint"
+        android:inputType="text"/>
+
+
+</android.support.v7.widget.Toolbar>

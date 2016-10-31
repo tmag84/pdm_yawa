@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">YAWA</string>
+
+    <string name="toolbar_city_input_hint" translatable="false">Write "city,country-tag"</string>
+    <string name="toolbar_app_logo">YAWA Credits</string>
+    <string name="toolbar_city_search" translatable="true">Search</string>
+    <string name="toolbar_city_text" translatable="true">City</string>
+
+    <string name="credits_authors_label" translatable="true">Authors</string>
+    <string name="credits_author1_name" translatable="false">Tiago Magalhães n28593</string>
+    <string name="credits_openweatharmaplogo_description">OpenWeatherMap Link</string>
+
+    <string name="current_btn_text" translatable="true">Daily Forecast</string>
+    <string name="forecast_btn_text" translatable="true">5 Day Forecast</string>
+</resources>

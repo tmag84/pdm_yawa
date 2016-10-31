@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_weather_forecast"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="isel.pdm.yawa.presentation.WeatherForecastActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_main"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/weather_forecast_selector"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:checkedButton="@+id/forecastBtn">
+
+        <RadioButton
+            android:text="@string/current_btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentBtn"
+            android:layout_weight="1"
+            />
+
+        <RadioButton
+            android:text="@string/forecast_btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/forecastBtn"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <TextView
+        android:text="@string/forecast_btn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activityTitle"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
