@@ -6,10 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
  * Created by Tiago on 23/10/2016.
+ * Current Weather Information
  */
 
 data class WeatherCurrent(
-        val coord: WeatherCoordinates,
+        val coord: WeatherCoordinates?,
         val weather: List<WeatherDescription>,
         val base: String,
         val main: WeatherMain,
@@ -19,8 +20,9 @@ data class WeatherCurrent(
         val sys: WeatherSys,
         val id: Int,
         val name: String,
-        val cod: String
+        val cod: String?
 ) : Parcelable {
+
     data class WeatherMain(
             val temp: Double,
             val pressure: Double,
@@ -175,6 +177,7 @@ data class WeatherCurrent(
             writeTypedList(weather)
             writeString(base)
             writeTypedObject(main,0)
+            writeTypedObject(wind,0)
             writeTypedObject(clouds,0)
             writeLong(dt)
             writeTypedObject(sys,0)

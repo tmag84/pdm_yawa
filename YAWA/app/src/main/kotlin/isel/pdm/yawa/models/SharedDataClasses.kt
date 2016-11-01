@@ -11,6 +11,7 @@ data class WeatherCoordinates(
         val lon: Double,
         val lat: Double
 ) : Parcelable {
+
     companion object {
         @JvmField @Suppress("unused")
         val CREATOR = object : Parcelable.Creator<WeatherCoordinates> {
@@ -40,6 +41,7 @@ data class WeatherDescription(
         val description: String,
         val icon: String
 ) : Parcelable {
+
     companion object {
         @JvmField @Suppress("unused")
         val CREATOR = object : Parcelable.Creator<WeatherDescription> {

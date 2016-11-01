@@ -11,10 +11,6 @@ class WeatherCurrentActivity : BaseActivity() {
 
     override val layoutResId: Int = R.layout.activity_weather_current
 
-    override fun localHandlerActivityExecution(weatherInfo: WeatherInfo) {
-        startActivity(Intent(this,WeatherCurrentActivity::class.java).putExtra("weatherInfo",weatherInfo))
-    }
-
     private fun onWeatherInfoSelection(btn_id:Int, weather:WeatherInfo) {
         when(btn_id) {
             1 -> startActivity(Intent(this,WeatherForecastActivity::class.java).putExtra("weather_info",weather))
@@ -24,7 +20,7 @@ class WeatherCurrentActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val weatherInfo = intent.extras.getParcelable<WeatherInfo>("weather_info")
-        textId.text = weatherInfo.weatherCurrent?.name
+        textId.text = weatherInfo?.weatherCurrent?.name
 
         weather_current_selector.setOnCheckedChangeListener { radioGroup, i ->
             onWeatherInfoSelection(i,weatherInfo)

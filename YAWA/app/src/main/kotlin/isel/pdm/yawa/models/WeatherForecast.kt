@@ -8,17 +8,17 @@ import android.os.Parcelable
  */
 
 data class WeatherForecast(
-        val city: WeatherCityInfo,
-        val cod: String,
+        val city: WeatherCityInfo?,
+        val cod: String?,
         val message: Double,
         val cnt: Int,
-        val list: List<WeatherFF>
+        val list: List<WeatherFF>?
 ) : Parcelable {
     data class WeatherCityInfo(
             val id: Int,
-            val name: String,
-            val coord: WeatherCoordinates,
-            val country: String,
+            val name: String?,
+            val coord: WeatherCoordinates?,
+            val country: String?,
             val population: Int
     ) : Parcelable {
         companion object {
@@ -50,10 +50,10 @@ data class WeatherForecast(
 
     data class WeatherFF(
             val dt: Long,
-            val temp: WeatherTemp,
+            val temp: WeatherTemp?,
             val pressure: Double,
             val humidity: Int,
-            val weather: List<WeatherDescription>,
+            val weather: List<WeatherDescription>?,
             val speed: Double,
             val deg: Double,
             val clouds: Int,

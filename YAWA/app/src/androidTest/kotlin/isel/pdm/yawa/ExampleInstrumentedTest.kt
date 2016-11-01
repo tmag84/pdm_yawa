@@ -3,6 +3,7 @@ package isel.pdm.yawa
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import com.android.volley.RequestQueue
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.Volley
 import isel.pdm.yawa.models.WeatherCurrent
 import isel.pdm.yawa.models.WeatherForecast
@@ -63,29 +64,59 @@ class ExampleInstrumentedTest {
         error = null
     }
 
-    fun handleRequest(weather:WeatherInfo, current:WeatherCurrent) {
-        weather.weatherCurrent=current;
+    private fun handleWeatherCurrentResult(data:WeatherCurrent, weatherInfo:WeatherInfo) {
+        weatherInfo.weatherCurrent=data
+        syncUp(weatherInfo)
+    }
+
+    private fun handleWeatherForecastResult(data:WeatherForecast, weatherInfo:WeatherInfo) {
+        weatherInfo.weatherForecast=data
+        syncUp(weatherInfo)
+    }
+
+    private fun handleError(error: VolleyError, weatherInfo:WeatherInfo) {
+        weatherInfo.error=error.message
+        syncUp(weatherInfo)
+    }
+
+    private fun syncUp(weatherInfo:WeatherInfo) {
+        if (weatherInfo.weatherForecast!=null && weatherInfo.weatherCurrent!=null) {
+            val here : String = "here"
+        }
     }
 
     @Test
     fun test_WeatherInfo() {
-        var weather = WeatherInfo()
-        requestQueue.add(
-                GetRequest(
-                        WEATHAR_CURR_URL_TEST,
-                        WeatherCurrent::class.java,
-                        { currentWeather -> handleRequest(weather,currentWeather)},
-                        { error -> executeAndPublishResult { fail() } }
-                )
-        )
-        waitForCompletion()
+        @Test
+        fun parseToParcebale() {
+            val weatherInfo = WeatherInfo()
+
+            requestQueue.add(
+                    GetRequest(
+                            WEATHER_CURR_URL_TEST,
+                            WeatherCurrent::class.java,
+                            {result->handleWeatherCurrentResult(result,weatherInfo)},
+                            {error->handleError(error,weatherInfo)}
+                    )
+            )
+
+            //request for daily forecast information
+            requestQueue.add(
+                    GetRequest(
+                            WEATHER_FF_URL_TEST,
+                            WeatherForecast::class.java,
+                            {result->handleWeatherForecastResult(result,weatherInfo)},
+                            {error->handleError(error,weatherInfo)}
+                    )
+            )
+        }
     }
 
-    @Test
+    //@Test
     fun test_successCurrentWeatherRequest() {
         requestQueue.add(
                 GetRequest(
-                        WEATHAR_CURR_URL_TEST,
+                        WEATHER_CURR_URL_TEST,
                         WeatherCurrent::class.java,
                         { currentWeather -> executeAndPublishResult { assertNotNull(currentWeather) } },
                         { error -> executeAndPublishResult { fail() } }
@@ -94,7 +125,7 @@ class ExampleInstrumentedTest {
         waitForCompletion()
     }
 
-    @Test
+    //@Test
     fun test_successForecastWeatherRequest() {
         requestQueue.add(
                 GetRequest(

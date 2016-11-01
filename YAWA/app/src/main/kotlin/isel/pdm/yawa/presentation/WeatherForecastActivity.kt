@@ -11,10 +11,6 @@ class WeatherForecastActivity : BaseActivity() {
 
     override val layoutResId: Int = R.layout.activity_weather_forecast
 
-    override fun localHandlerActivityExecution(weatherInfo: WeatherInfo) {
-        startActivity(Intent(this,WeatherForecastActivity::class.java).putExtra("weatherInfo",weatherInfo))
-    }
-
     private fun onWeatherInfoSelection(btn_id:Int, weather:WeatherInfo) {
         when(btn_id) {
             0 -> startActivity(Intent(this,WeatherCurrentActivity::class.java).putExtra("weather_info",weather))

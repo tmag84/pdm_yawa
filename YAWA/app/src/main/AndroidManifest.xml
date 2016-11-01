@@ -17,22 +17,20 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".presentation.WeatherCurrentActivity"
             android:noHistory="true">
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name=".presentation.WeatherForecastActivity"
             android:noHistory="true"></activity>
-        <activity android:name=".presentation.CreditsActivity"></activity>
-        <activity android:name=".presentation.ErrorActivity"></activity>
+        <activity android:name=".presentation.CreditsActivity">
+        </activity>
+        <activity android:name=".presentation.ErrorActivity">
+        </activity>
     </application>
 
 </manifest>

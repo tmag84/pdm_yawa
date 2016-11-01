@@ -8,10 +8,6 @@ class ErrorActivity : BaseActivity() {
 
     override val layoutResId: Int = R.id.activity_error
 
-    override fun localHandlerActivityExecution(weatherInfo: WeatherInfo) {
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
